@@ -1,0 +1,89 @@
+{
+  "users": [
+    {
+      "id": "qw312e123",
+      "name": "qwe",
+      "date": "typicode",
+      "value": 1235
+    },
+    {
+      "id": "qwqe43242cv",
+      "name": "qwe",
+      "date": "typicode",
+      "value": 1235
+    },
+    {
+      "id": "qwqe43242cv12e3",
+      "name": "qwe",
+      "date": "typicode",
+      "value": 1235
+    },
+    {
+      "id": "qwqe43242cv6b",
+      "name": "qwe",
+      "date": "typicode",
+      "value": 1235
+    },
+    {
+      "id": "qwqe43242cvl123o8",
+      "name": "qwe",
+      "date": "typicode",
+      "value": 1235
+    },
+    {
+      "id": "bnm2f178",
+      "name": "qwe",
+      "date": "typicode",
+      "value": 1235
+    },
+    {
+      "id": "asd112",
+      "name": "qwe",
+      "date": "typicode",
+      "value": 1235
+    },
+    {
+      "id": "asd134e",
+      "name": "qwe",
+      "date": "typicode",
+      "value": 1235
+    },
+    {
+      "id": "asd134ecd31",
+      "name": "qwe",
+      "date": "typicode",
+      "value": 1235
+    },
+    {
+      "id": "asd134ecd31xc1",
+      "name": "qwe",
+      "date": "typicode",
+      "value": 1235
+    },
+    {
+      "id": "c3asd134ecd31",
+      "name": "qwe",
+      "date": "typicode",
+      "value": 1235
+    },
+    {
+      "id": "zxcvbasd134ecd3121",
+      "name": "qwe",
+      "date": "typicode",
+      "value": 1235
+    },
+    {
+      "id": "asd134ecd314f4r45t",
+      "name": "qwe",
+      "date": "typicode",
+      "value": 1235
+    }
+  ],
+  "actions": [
+    {"id": "123qwe", "summ": 1231},
+    {"id": "123qwe", "summ": 12390},
+    {"id": "123qwe", "summ": 12378},
+    {"id": "123qwe", "summ": 15623},
+    {"id": "123qwe", "summ": 1423}
+  ]
+}
