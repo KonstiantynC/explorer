@@ -10,8 +10,18 @@
       <li>Height: {{ blockHeight }}</li>
       <li>Size: {{ size }}</li>
       <li>txIndex: {{ txIndex }}</li>
-      <li>inputs: {{ inputs }}</li>
-      <li>out: {{ out }}</li>
+      <li 
+        v-for="(input, index) in inputs"
+        :key="`input-${index}`"
+        >
+        input: <router-link to="/address">{{ input.prev_out.addr }}</router-link>
+      </li>
+      <li
+        v-for="(itemOut, index) in out"
+        :key="`itemOut-${index}`"
+      >
+        out: {{ itemOut.addr }}
+      </li>
     </ul>
   </div>
 </template>
@@ -67,16 +77,10 @@ export default {
 
 
 <style>
-
 ul {
   list-style-type: none;
-  background-color: grey;
-  /*display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;*/
+  width: 800px;
 }
-
 
 
 </style>

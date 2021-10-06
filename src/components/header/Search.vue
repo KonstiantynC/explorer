@@ -10,6 +10,7 @@
     </select>
     <button @click="Search">Search</button>
   </div>
+  <router-view/>
 </template>
 
 <script>
@@ -48,6 +49,7 @@ export default {
   justify-content: center;
   background-color: green;
   height: 50px;
+  width: 100%;
 }
 
 input {
@@ -67,10 +69,9 @@ button {
 strong {
   padding-right: 500px;
   font-size: 25px;
+  margin-right: 200px ;
 }
-.header_header {
-  margin: -8px;
-}
+
 
 </style>
 

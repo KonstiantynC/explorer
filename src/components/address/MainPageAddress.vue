@@ -58,15 +58,6 @@ export default {
 
 <style>
 
-ul {
-  list-style-type: none;
-  background-color: grey;
-  /*display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;*/
-}
-
 
 
 </style>

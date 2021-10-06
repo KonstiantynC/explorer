@@ -1,16 +1,14 @@
 <template>
-  <div id="app">
-    <search />
+  <div class="container">
     <router-view/>
   </div>
 </template>
 
 <script>
-import Search from './components/header/Search.vue'
 export default {
   name: 'App',
   components: {
-    Search
+    
   }
 }
 </script>
@@ -24,6 +22,13 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 </style>

@@ -1,29 +1,29 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import Search from "../components/header/Search.vue"
-import App from '../App.vue'
-const routes: Array<RouteRecordRaw> = [
+
+
+const routes = [
   {
-    path: "/",
-    name: "App",
-    component: App,
+    path: '/',
+    name: 'Search',
+    component: () => import('../components/header/Search.vue'),
     children: [
       {
-        path: "/block",
+        path: "block",
         name: "block",
         component: () => import('../components/block/MainPageBlock.vue')
       },
       {
-        path: "/address",
+        path: "address",
         name: "address",
         component: () => import( "../components/address/MainPageAddress.vue"),
       },
       {
-        path: "/transaction",
+        path: "transaction",
         name: "transaction",
         component: () => import( "../components/transaction/MainPageTransaction.vue"),
       },
     ]
-  },
+  }
 
 
   

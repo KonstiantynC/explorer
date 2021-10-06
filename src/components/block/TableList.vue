@@ -1,22 +1,68 @@
 <template>
-  <table>
-    <tbody>
-      <tr class="table__list">
-        <td>Hash: {{ hash }}</td>
-        <td>No: {{ id }}</td>
-        <td>Miner: {{ prevBlock }}</td>
-        <td>Merkle root: {{ merkleRoot }}</td>
-        <td>Timestamp: {{ timestamp }}</td>
-        <td>Bits: {{ bits }}</td>
-        <td>Height: {{ height }}</td>
-        <td>Number of Transactions: {{ numberOfTransactions }}</td>
-        <td>Nonce: {{ nonce }}</td>
-        <td>Size: {{ size }}</td>
-        <td>Block Reward: {{ blockReward }}</td>
-        <td>blockTransactions: []</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="content">
+    <h2>Block: {{ height }}</h2>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <span>Hash:</span>
+            <span>{{ hash }}</span>            
+          </td>
+          <hr/>
+          <td>
+            <span>No:</span>
+            <span>{{ id }}</span>
+          </td>
+          <hr/>
+          <td>
+            <span>Miner:</span>
+            <span>{{ prevBlock }}</span>
+          </td>
+          <hr/>
+          <td>
+            <span>Merkle root:</span> 
+            <span>{{ merkleRoot }}</span>
+          </td>
+          <hr/>
+          <td>
+            <span>Timestamp:</span> 
+            <span>{{ timestamp }}</span>
+          </td>
+          <hr/>
+          <td>
+            <span>Bits:</span> 
+            <span>{{ bits }}</span>
+          </td>
+          <hr/>
+          <td>
+            <span>Height:</span> 
+            <span>{{ height }}</span>
+          </td>
+          <hr/>
+          <td>
+            <span>Number of Transactions:</span> 
+            <span>{{ numberOfTransactions }}</span>
+          </td>
+          <hr/>
+          <td>
+            <span>Nonce:</span>
+            <span>{{ nonce }}</span>
+          </td>
+          <hr/>
+          <td>
+            <span>Size:</span>
+            <span>{{ size }}</span>
+          </td>
+          <hr/>
+          <td>
+            <span>Block Reward:</span>
+            <span>{{ blockReward }}</span>
+          </td>
+          <hr/>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </template>
 
 <script>
@@ -41,8 +87,6 @@ export default {
     size: 0,
     maihain: true,
     blockReward: 0,
-    transactionVolume: '',
-    blockTransactions: []
   }),
   mounted() {
     axios
@@ -61,9 +105,7 @@ export default {
         this.mainChain = this.info.main_chain
         this.height = this.info.height
         this.blockReward = this.info.block_index
-        this.transactionVolume = this.info.relayed_by
         this.blockTransactions = this.info.tx
-        console.log(this.blockTransactions)
       })
       .catch(error  => {
         console.log(error)
@@ -81,15 +123,45 @@ export default {
 
 
 <style>
-.table__list {
+.content {
   display: flex;
   flex-direction: column;
-  background-color: grey;
   align-items: flex-start;
-  justify-content: flex-start;
-  padding: 15px;
-  margin-top: 20px;
-  width: 100%;
+  width: 1200px;
+}
+
+h2 {
+  margin-left: 15px;
+}
+
+tr {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+tbody {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 1200px;
+  padding-left: 15px;
+}
+
+
+.title_block {
+  padding-right: 200px;
+}
+
+td {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 800px;
+}
+
+hr {
+  width: 1200px;
 }
 
 </style>
