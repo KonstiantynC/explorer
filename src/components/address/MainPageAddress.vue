@@ -2,13 +2,24 @@
   <div class="ul_list">
     <ul>
       <li>Hash: {{ hash }}</li>
-      <li>No: {{ id }}</li>
+      <li>Address: {{ address }}</li>
       <li>nTx: {{ nTx }}</li>
       <li>nUnredeemed: {{ nUnredeemed }}</li>
       <li>totalReceived: {{ totalReceived }}</li>
       <li>totalSent: {{ totalSent }}</li>
       <li>finalBalance: {{ finalBalance }}</li>
-      <li>txs: {{ txs }}</li>
+      <li
+        class="address__transaction"
+        v-for="(item, index) in txs"
+        :key="`item-${index}`"
+      >
+        hash: {{ item.hash }}
+        fee: {{ item.fee }}
+        size: {{ item.size }}
+        weight: {{ item.weight }}
+        <!--xinputs: {{ item.inputs }}
+        out: {{ item.out }}-->
+      </li>
     </ul>
   </div>
 </template>
@@ -23,7 +34,7 @@ export default {
     info: [],
     errored: true ,
     hash: '',
-    id: 0,
+    address: '',
     nTx: 0,
     nUnredeemed: 0,
     totalReceived: '',
@@ -36,13 +47,13 @@ export default {
       .get('https://blockchain.info/rawaddr/1AJbsFZ64EpEfS5UAjAfcUG8pH8Jn3rn1F')
       .then(response => {
         this.info = response.data
-        this.hash = this.info.hash
-        this.id = this.info.ver
-        this.nTx = this.info.nTx
-        this.nUnredeemed = this.info.nUnredeemed
-        this.totalReceived = this.info.totalReceived
-        this.totalSent = this.info.totalSent
-        this.finalBalance = this.info.finalBalance
+        this.hash = this.info.hash160
+        this.address = this.info.address
+        this.nTx = this.info.n_tx
+        this.nUnredeemed = this.info.n_unredeemed
+        this.totalReceived = this.info.total_received
+        this.totalSent = this.info.total_sent
+        this.finalBalance = this.info.final_balance
         this.txs = this.info.txs
       })
       .catch(error  => {
@@ -57,7 +68,12 @@ export default {
 
 
 <style>
+ul {
+  list-style-type: none;
+}
 
-
+.address__transaction {
+  width: 800px;
+}
 
 </style>

@@ -1,6 +1,15 @@
 <template>
   <div>
-    {{ transactionInput.prev_out }}
+    <div 
+      v-if="transactionInput.prev_out === null"
+    >
+      COINBASE (Newly Generated Coins)
+    </div>
+    <div 
+      v-else
+    >
+      <router-link to="/address">{{ transactionInput.prev_out.addr }}</router-link>
+    </div>
   </div>
 </template>
 
@@ -19,9 +28,7 @@ export default {
   components: {
     
   },
-  mounted () {
-    console.log(this.transactionInput)
-  }
+  
 }
 </script>
 

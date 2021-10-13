@@ -24,7 +24,7 @@
         class="transactionInput"
         v-for="(objInput, index) in transaction.inputs"
         :key="`objInput-${index}`"
-      >
+      > 
         <transaction-input
           :transaction-input="objInput"
         />
@@ -33,7 +33,7 @@
         class="transactionOut"
         v-for="(objOut, index) in transaction.out"
         :key="`objOut-${index}`"
-      >
+      > 
         <transaction-out
          :transaction-out="objOut"
         />
@@ -47,6 +47,7 @@
 import axios from 'axios'
 import TransactionInput from './TransactionInput.vue'
 import TransactionOut from './TransactionOut.vue'
+
 
 export default {
   name: 'transaction-block',

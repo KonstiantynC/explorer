@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{ transactionOut.spending_outpoints }}
+    <router-link to="/address">{{ transactionOut.addr }}</router-link>
   </div>
 </template>
 

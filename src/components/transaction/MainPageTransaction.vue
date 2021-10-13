@@ -11,16 +11,37 @@
       <li>Size: {{ size }}</li>
       <li>txIndex: {{ txIndex }}</li>
       <li 
+        class="li__inputs" 
         v-for="(input, index) in inputs"
         :key="`input-${index}`"
-        >
-        input: <router-link to="/address">{{ input.prev_out.addr }}</router-link>
+      > 
+        <div>
+          Address: 
+          <router-link to="/address">
+            {{ input.prev_out.addr }}
+          </router-link>
+        </div>
+        <!--<div>
+          Witness: {{ input.script }}    
+        </div>-->
+        <div>
+          Pkscript: {{ input.prev_out.script }}
+        </div>
       </li>
       <li
+        class="li__out"
         v-for="(itemOut, index) in out"
         :key="`itemOut-${index}`"
-      >
-        out: {{ itemOut.addr }}
+      > 
+        <div>
+          Address:
+          <router-link to="address">
+            {{ itemOut.addr }}
+          </router-link>
+        </div>
+        <div>Value: {{ itemOut.value }}</div>
+        <div>Index: {{ itemOut.n }}</div>
+        <div>Pkscript: {{ itemOut.script }}</div>
       </li>
     </ul>
   </div>
@@ -79,8 +100,28 @@ export default {
 <style>
 ul {
   list-style-type: none;
-  width: 800px;
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
+.ul_list {
+
+}
+
+.li__inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 1185pxpx;
+}
+
+.li__out {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
+  width: 1185pxpx;
+}
 
 </style>
