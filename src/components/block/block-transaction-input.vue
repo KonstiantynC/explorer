@@ -19,7 +19,8 @@ export default {
   props: {
     transactionInput: {
       type: Object,
-      default: () => ({})
+      default: () => ({}),
+      required: true
     }
   },
   data: () => ({

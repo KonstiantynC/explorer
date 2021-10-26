@@ -3,19 +3,17 @@
     <strong>Explorer</strong>
     <input v-model="hash" type="text" placeholder="Search">
     <select v-model="selected">
-      <option disabled value="">make your choice</option>
       <option>{{ block }}</option>
       <option>{{ address }}</option>
       <option>{{ transaction }}</option>
     </select>
-    <button @click="Search">Search</button>
+    <button @click="Search" :disabled="false">Search</button>
   </div>
   <router-view/>
 </template>
 
 <script>
 import { validate, getAddressInfo } from 'bitcoin-address-validation';
-
 
 export default {
   name: 'search',
@@ -32,11 +30,26 @@ export default {
     Search() {
       const valid = validate(this.hash)
       if (this.selected == 'Address' || valid) {
-        this.$router.push('/address')
+        this.$router.push({ 
+          name: 'address',
+          params: { 
+            hash: this.hash  
+          }
+        })
       }else if (this.selected == 'Transaction') {
-        this.$router.push('/transaction')
+        this.$router.push({
+          name: 'transaction',
+          params: { 
+            hash: this.hash 
+          }
+        })
       }else if(this.selected == 'Block'){
-        this.$router.push('/block')
+        this.$router.push({
+          name: 'block',
+          params: { 
+            hash: this.hash  
+          }
+        })
       } else {
         console.log(validate('invalid'))
       }

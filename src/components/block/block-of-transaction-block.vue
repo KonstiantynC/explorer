@@ -3,23 +3,12 @@
     <div class="transactions_blok__title">Block Transactions:</div> 
     <div
       class="ul_list__blockTransactions"
-      v-for="(transaction, index) in blockTransactions"
+      v-for="(transaction, index) in transactionBlock.tx"
       :key="`transaction-${index}`"
     > 
-      <div class="transactions_field">
-        <div>Fee:</div>
-        <div class="fee__value">{{ transaction.fee }}</div>
-      </div>
-      <div>
-        <div class="transactions_field">
-          <div>Hash:</div>
-          <router-link class="transaction_link" to="/transaction">{{ transaction.hash }}</router-link>
-          <div class="transactions_date">
-            <div>Date:</div>
-            <div class="time__value">{{ transaction.time }}</div>
-          </div>
-        </div>
-      </div>
+      <transaction-info 
+        :transaction-info="transaction"
+      />
       <div 
         class="transactionInput"
         v-for="(objInput, index) in transaction.inputs"
@@ -35,7 +24,7 @@
         :key="`objOut-${index}`"
       > 
         <transaction-out
-         :transaction-out="objOut"
+          :transaction-out="objOut"
         />
       </div>
       <br/>
@@ -45,29 +34,27 @@
 
 <script>
 import axios from 'axios'
-import TransactionInput from './TransactionInput.vue'
-import TransactionOut from './TransactionOut.vue'
+import TransactionInput from './block-transaction-input.vue'
+import TransactionOut from './block-transaction-out.vue'
+import TransactionInfo from './block-of-transaction-info.vue'
 
 
 export default {
   name: 'transaction-block',
   components: {
     TransactionInput,
-    TransactionOut
+    TransactionOut,
+    TransactionInfo
   },
   data: () => ({
-    blockTransactions: []
+    
   }),
-  mounted() {
-    axios
-      .get('https://blockchain.info/rawblock/0000000000000bae09a7a393a8acded75aa67e46cb81f7acaa5ad94f9eacd103')
-      .then(response => {
-        this.info = response.data
-        this.blockTransactions = this.info.tx
-      })
-      .catch(error  => {
-        console.log(error)
-      })
+  props: {
+    transactionBlock: {
+      type: Object,
+      default: () => ({}),
+      required: true
+    }
   },
 }
 </script>

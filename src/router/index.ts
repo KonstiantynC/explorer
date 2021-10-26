@@ -4,23 +4,23 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 const routes = [
   {
     path: '/',
-    name: 'Search',
-    component: () => import('../components/header/Search.vue'),
+    name: 'header-search',
+    component: () => import('../components/header_&_footer/header-search.vue'),
     children: [
       {
-        path: "block",
+        path: "/block/:hash",
         name: "block",
-        component: () => import('../components/block/MainPageBlock.vue')
+        component: () => import('../components/block/block-index.vue')
       },
       {
-        path: "address",
+        path: "/address/:hash",
         name: "address",
-        component: () => import( "../components/address/MainPageAddress.vue"),
+        component: () => import( "../components/address/address-index.vue"),
       },
       {
-        path: "transaction",
+        path: "/transaction/:hash",
         name: "transaction",
-        component: () => import( "../components/transaction/MainPageTransaction.vue"),
+        component: () => import( "../components/transaction/transaction-index.vue"),
       },
     ]
   }
