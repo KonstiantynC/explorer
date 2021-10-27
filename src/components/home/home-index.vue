@@ -1,14 +1,20 @@
 <template>
   <div class="header_header">
-    <strong>Explorer</strong>
-    <input v-model="hash" type="text" placeholder="Search">
-    <select v-model="selected">
-      <option>{{ block }}</option>
-      <option>{{ address }}</option>
-      <option>{{ transaction }}</option>
-    </select>
-    <button @click="Search" :disabled="false">Search</button>
-  </div>
+    <div class="qwe">
+      <router-link class="home_link" :to="{ path: '/home-block' }">
+        Explorer  
+      </router-link>  
+    </div>
+    <div>
+      <input v-model="hash" type="text" placeholder="Search">
+      <select v-model="selected">
+        <option>{{ block }}</option>
+        <option>{{ address }}</option>
+        <option>{{ transaction }}</option>
+      </select>
+      <button @click="Search" :disabled="!hash">Search</button>
+    </div>  
+  </div> 
   <router-view/>
 </template>
 
@@ -16,7 +22,7 @@
 import { validate, getAddressInfo } from 'bitcoin-address-validation';
 
 export default {
-  name: 'search',
+  name: 'home-header',
   components: {
   },
   data: () => ({
@@ -24,7 +30,7 @@ export default {
     selected: '',
     block: 'Block',
     address: 'Address',
-    transaction: 'Transaction'
+    transaction: 'Transaction',
   }),
   methods: {
     Search() {
@@ -33,14 +39,14 @@ export default {
         this.$router.push({ 
           name: 'address',
           params: { 
-            hash: this.hash  
+            addr: this.hash  
           }
         })
       }else if (this.selected == 'Transaction') {
         this.$router.push({
           name: 'transaction',
           params: { 
-            hash: this.hash 
+            tx: this.hash 
           }
         })
       }else if(this.selected == 'Block'){
@@ -66,7 +72,7 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   background-color: green;
   height: 50px;
   width: 100%;
@@ -86,12 +92,16 @@ button {
   height: 30px;
 }
 
-strong {
-  padding-right: 500px;
+.home_link {
   font-size: 25px;
-  margin-right: 200px ;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none; 
 }
 
+.qwe {
+  padding-right: 150px;
+}
 
 </style>
 

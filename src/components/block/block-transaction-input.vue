@@ -8,7 +8,12 @@
     <div 
       v-else
     >
-      <router-link to="/address">{{ transactionInput.prev_out.addr }}</router-link>
+      <router-link
+      class="block_input" 
+      :to="{ name: 'address', params: { addr: this.transactionInput.prev_out.addr }}"
+      >
+        {{ transactionInput.prev_out.addr }}
+      </router-link>
     </div>
   </div>
 </template>
@@ -35,6 +40,8 @@ export default {
 
 
 <style>
-
+.block_input {
+  text-decoration: none;
+}
 
 </style>

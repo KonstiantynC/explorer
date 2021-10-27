@@ -26,16 +26,26 @@ export default {
     errored: true 
   }),
   mounted() {
-    console.log(this.$route)
     axios
-      .get('https://blockchain.info/rawtx/b6f6991d03df0e2e04dafffcd6bc418aac66049e2cd74b80f14ac86db1e3f0da')
+      .get('https://blockchain.info/rawtx/' + this.$route.params.tx)
       .then(response => {
         this.info = response.data
       })
       .catch(error  => {
+        this.$router.push({name: 'error'})
         console.log(error)
       })
-
+  },
+  updated() {
+    axios
+      .get('https://blockchain.info/rawtx/' + this.$route.params.tx)
+      .then(response => {
+        this.info = response.data
+      })
+      .catch(error  => {
+        this.$router.push({name: 'error'})
+        console.log(error)
+      })
   }
 }
 

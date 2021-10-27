@@ -22,7 +22,7 @@ export default {
   }),
   mounted() {
     axios
-      .get('https://blockchain.info/rawaddr/1AJbsFZ64EpEfS5UAjAfcUG8pH8Jn3rn1F', {
+      .get('https://blockchain.info/rawaddr/' + this.$route.params.addr, {
         params: {
           cors: true  
         }
@@ -31,6 +31,22 @@ export default {
         this.info = response.data
       })
       .catch(error  => {
+        this.$router.push({name: 'error'})
+        console.log(error)
+      })
+  },
+  updated() {
+    axios
+      .get('https://blockchain.info/rawaddr/' + this.$route.params.addr, {
+        params: {
+          cors: true  
+        }
+      })
+      .then(response => {
+        this.info = response.data
+      })
+      .catch(error  => {
+        this.$router.push({name: 'error'})
         console.log(error)
       })
   }

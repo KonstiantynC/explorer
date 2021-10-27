@@ -2,7 +2,10 @@
   <div>
     <div>
       Address:
-      <router-link to="/address">
+      <router-link
+        class="transact_link" 
+        :to="{ name: 'address', params: { addr: this.transactionOut.addr  }}"
+      >
         {{ transactionOut.addr }}
       </router-link>
     </div>
@@ -37,6 +40,8 @@ export default {
 
 
 <style>
-
+.transact_link {
+  text-decoration: none;
+}
 
 </style>

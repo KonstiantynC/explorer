@@ -1,6 +1,11 @@
 <template>
   <div>
-    <router-link to="/address">{{ transactionOut.addr }}</router-link>
+    <router-link 
+    :to="{ name: 'address', params: { addr: this.transactionOut.addr }}"
+    class="block_out"
+    >
+      {{ transactionOut.addr }}
+    </router-link>
   </div>
 </template>
 
@@ -23,6 +28,8 @@ export default {
 
 
 <style>
-
+.block_out {
+  text-decoration: none;
+}
 
 </style>

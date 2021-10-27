@@ -27,13 +27,17 @@ export default {
     info: [],
     errored: true
   }),
-  mounted() {
+  methods: {
+
+  },
+  mounted () {
     axios
       .get('https://blockchain.info/rawblock/' + this.$route.params.hash)
       .then(response => {
         this.info = response.data
       })
       .catch(error => {
+        this.$router.push({name: 'error'})
         console.log(error)
       })
   },
@@ -44,6 +48,7 @@ export default {
         this.info = response.data
       })
       .catch(error => {
+        this.$router.push({name: 'error'})
         console.log(error)
       })
   }      

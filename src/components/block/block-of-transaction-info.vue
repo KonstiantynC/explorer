@@ -7,7 +7,12 @@
     <div>
       <div class="transactions_field">
         <div>Hash:</div>
-        <router-link class="transaction_link" to="/transaction">{{ transactionInfo.hash }}</router-link>
+        <router-link 
+          class="transaction_link" 
+          :to="{ name: 'transaction', params: { tx: this.transactionInfo.hash }}"
+        >
+          {{ transactionInfo.hash }}
+        </router-link>
         <div class="transactions_date">
           <div>Date:</div>
           <div class="time__value">{{ transactionInfo.time }}</div>
@@ -18,6 +23,7 @@
 </template>
 
 <script>
+import satoshiBitcoin from 'satoshi-bitcoin'
 
 export default {
   name: 'transaction-info',
@@ -40,6 +46,8 @@ export default {
 
 
 <style>
-
+.transaction_link {
+  text-decoration: none;
+}
 
 </style>
