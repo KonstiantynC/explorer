@@ -1,29 +1,33 @@
 <template>
-  <div class="header_header">
-    <div class="qwe">
-      <router-link class="home_link" :to="{ path: '/home-block' }">
-        Explorer  
-      </router-link>  
-    </div>
-    <div>
-      <input v-model="hash" type="text" placeholder="Search">
-      <select v-model="selected">
-        <option>{{ block }}</option>
-        <option>{{ address }}</option>
-        <option>{{ transaction }}</option>
-      </select>
-      <button @click="Search" :disabled="!hash">Search</button>
+  <div class="header">
+    <div class="header_header">
+      <div class="header_home_link">
+        <router-link class="home_link" :to="{ path: '/home-block' }">
+          Explorer  
+        </router-link>  
+      </div>
+      <div>
+        <input class="input_hash" @keydown="search" v-model="hash" type="text" placeholder="Search">
+        <select class="select_page" @keydown="search" v-model="selected">
+          <option>{{ block }}</option>
+          <option>{{ address }}</option>
+          <option>{{ transaction }}</option>
+        </select>
+        <button class="button_search" @click="search" :disabled="!hash">Search</button>
+      </div>  
     </div>  
-  </div> 
+  </div>
   <router-view/>
 </template>
 
 <script>
 import { validate, getAddressInfo } from 'bitcoin-address-validation';
+import error from '../views/error.vue'
 
 export default {
   name: 'home-header',
   components: {
+    error
   },
   data: () => ({
     hash: '',
@@ -32,8 +36,8 @@ export default {
     address: 'Address',
     transaction: 'Transaction',
   }),
-  methods: {
-    Search() {
+   methods: {
+    search() {
       const valid = validate(this.hash)
       if (this.selected == 'Address' || valid) {
         this.$router.push({ 
@@ -68,26 +72,32 @@ export default {
 
 
 <style>
+.header {
+  width: 100%;
+  background-color: green;
+  display: flex;
+  justify-content: center;
+}
+
 .header_header {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  background-color: green;
   height: 50px;
-  width: 100%;
+  width: 1300px;
 }
 
-input {
+.input_hash {
   height: 25px;
 }
 
-select {
+.select_page {
   margin-left: 15px;
   height: 30px;
 }
 
-button {
+.button_search {
   margin-left: 15px;
   height: 30px;
 }
@@ -99,8 +109,8 @@ button {
   text-decoration: none; 
 }
 
-.qwe {
-  padding-right: 150px;
+.header_home_link {
+  padding-right: 600px;
 }
 
 </style>

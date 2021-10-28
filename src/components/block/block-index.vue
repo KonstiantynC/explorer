@@ -28,32 +28,40 @@ export default {
     errored: true
   }),
   methods: {
-
+    loadBlock () {
+      axios
+      .get('https://blockchain.info/rawblock/' + this.$route.params.hash)
+      .then(response => {
+        this.info = response.data
+      })
+      .catch(error => {
+        this.$router.push({
+          name: 'error',
+          params: { 
+            input: this.$route.params.hash 
+          }
+        })
+        console.log(error)
+      })
+    }
   },
   mounted () {
-    axios
-      .get('https://blockchain.info/rawblock/' + this.$route.params.hash)
-      .then(response => {
-        this.info = response.data
-      })
-      .catch(error => {
-        this.$router.push({name: 'error'})
-        console.log(error)
-      })
+    this.loadBlock()
   },
   updated () {
-    axios
-      .get('https://blockchain.info/rawblock/' + this.$route.params.hash)
-      .then(response => {
-        this.info = response.data
-      })
-      .catch(error => {
-        this.$router.push({name: 'error'})
-        console.log(error)
-      })
+    this.loadBlock()
   }      
 }
 
+
+/*
+params: { 
+  error: {
+    hash: this.$route.params.hash,
+    message: 'block'
+  }             
+}
+*/
 </script>
 
 

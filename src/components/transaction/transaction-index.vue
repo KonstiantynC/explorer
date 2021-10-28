@@ -25,8 +25,9 @@ export default {
     info: [],
     errored: true 
   }),
-  mounted() {
-    axios
+  methods: {
+    loadTransaction () {
+      axios
       .get('https://blockchain.info/rawtx/' + this.$route.params.tx)
       .then(response => {
         this.info = response.data
@@ -35,17 +36,13 @@ export default {
         this.$router.push({name: 'error'})
         console.log(error)
       })
+    }
+  },
+  mounted() {
+    this.loadTransaction ()
   },
   updated() {
-    axios
-      .get('https://blockchain.info/rawtx/' + this.$route.params.tx)
-      .then(response => {
-        this.info = response.data
-      })
-      .catch(error  => {
-        this.$router.push({name: 'error'})
-        console.log(error)
-      })
+    this.loadTransaction ()
   }
 }
 
@@ -71,14 +68,14 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 1185pxpx;
+  width: 1200px;
 }
 
 .li__out {
   display: flex;
   flex-direction: column; 
   align-items: flex-start;
-  width: 1185pxpx;
+  width: 1200px;
 }
 
 </style>

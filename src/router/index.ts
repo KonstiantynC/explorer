@@ -28,9 +28,10 @@ const routes = [
         component: () => import( "../components/transaction/transaction-index.vue"),
       },
       {
-        path: 'error',
+        path: '/error/:input',
         name: 'error',
-        component: () => import( "../components/errors/error.vue")
+        props: true,
+        component: () => import( "../components/views/error.vue")
       }
     ]
   }
