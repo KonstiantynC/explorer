@@ -20,7 +20,7 @@
 <script>
 
 export default {
-  name: 'spinner',
+  name: 'loader',
   data: () => ({
   })
 }

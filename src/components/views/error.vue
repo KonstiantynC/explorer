@@ -1,25 +1,31 @@
 <template>
-  <div class="error_title">
-    <div class="error_circle">
-      <div>!</div>
-    </div>
-    <div class="error_text">
-      TI EBLAN  
+  <div class="error_container">
+    <div class="error_title">
+      <fa size='2x' icon="exclamation-circle" class="error_icon" />
+      <div class="error_item">
+        <span>Sorry, '</span> 
+          <div class="error_item_text">
+            {{ $route.params.input }}
+          </div>
+        <span>' is not a valid address, transaction or block</span>
+      </div> 
+      <div class="error_text">
+        hash is not found  
+      </div>
     </div>
   </div>
-  <spinner />
 </template>
 
 <script>
-import spinner from '../spinner.vue'
+import loader from './loader.vue'
 
 export default {
   name: 'error',
   components: {
-    spinner
+    loader
   },
   props: {
-    erroredInput: {
+    input: {
       type: Object,
       default: () => ({
       }),
@@ -30,39 +36,53 @@ export default {
 
   }),
   mounted () {
-    console.log(this.erroredInput)
+    console.log(this.$route.params.input)
   }
 }
 </script>
 
-
 <style>
+.error_container {
+  width: 100%;
+  position: absolute;
+  top: 38%;
+}
+
 .error_title {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 45px;
-  background-color: #ffcccc;
+  height: 150px;
   margin-top: 10px;
   width: 100%;
 }
 
-.error_circle{
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  background: #990000;
-  border-radius: 50%;
-  color: white;
-  font-size: 25px;
-  font-family: verdana;
-  text-align: center;
-  margin-right: 10px;
+.error_text {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
-.error_text {
-  font-size: 20px;
-  font-weight: 500;
+.error_icon {
+  color: red;
+  margin-right: 8px;
 }
+
+.error_item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.error_item_text {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  margin: 10px 0;
+  color: #ff4d4d;
+}
+
+
 </style>

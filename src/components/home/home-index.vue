@@ -3,16 +3,16 @@
     <div class="header_header">
       <div class="header_home_link">
         <router-link class="home_link" :to="{ path: '/home-block' }">
-          Explorer  
+          Sobakachain  
         </router-link>  
       </div>
-      <div>
-        <input class="input_hash" @keydown="search" v-model="hash" type="text" placeholder="Search">
+      <div class="input_item">
         <select class="select_page" @keydown="search" v-model="selected">
           <option>{{ block }}</option>
           <option>{{ address }}</option>
           <option>{{ transaction }}</option>
         </select>
+        <input class="input_hash" @keydown="search" v-model="hash" type="text" placeholder="Address, transaction or block">
         <button class="button_search" @click="search" :disabled="!hash">Search</button>
       </div>  
     </div>  
@@ -88,18 +88,26 @@ export default {
   width: 1300px;
 }
 
+.input_item {
+  border: solid 2px black;
+  border-radius: 5px;
+}
+
 .input_hash {
   height: 25px;
+  width: 250px;
 }
 
 .select_page {
-  margin-left: 15px;
   height: 30px;
+  background-color: blue;
+  font-weight: 500;
 }
 
 .button_search {
-  margin-left: 15px;
   height: 30px;
+  background-color: blue;
+  color: black;
 }
 
 .home_link {

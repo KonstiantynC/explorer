@@ -32,7 +32,12 @@ export default {
         this.info = response.data
       })
       .catch(error  => {
-        this.$router.push({name: 'error'})
+        this.$router.push({
+          name: 'error',
+          params: { 
+            input: this.$route.params.addr, 
+          }
+        })
         console.log(error)
       })
     }
