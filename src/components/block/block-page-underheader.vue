@@ -1,12 +1,19 @@
 <template>
   <div class="home_block_page">
     <div class="container_home_block"> 
-      <div>
-        <img class="bitcoin_logo_image" :src="image">
-      </div>
       <div class="home_block_name">
-        Bitcoin Explorer
+        <div>
+          <fa icon="cube" class="block_cube_icon" />
+        </div>
+        <div class="block_name_item">
+          Block: {{ blockPageUnderheader.height }}
+        </div>
       </div>  
+      <div class="block_item_hash">
+        <div>
+          {{ blockPageUnderheader.hash }}
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -16,12 +23,21 @@ import axios from 'axios'
 import image from '../img/bitcoin_icon.svg'
 
 export default {
-  name: 'home-block',
+  name: 'block-page-underheader',
+  props: {
+    blockPageUnderheader: {
+      type: Object,
+      default: () => ({
+      }),
+      required: true
+    }
+  },
   data: () => ({
     info: [],
     image,
   }),
   mounted() {
+    console.log(this.blockPageUnderheader)
     axios
       .get('https://blockchain.info/blocks', {
         params: {
@@ -48,29 +64,43 @@ export default {
   height: 150px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
 }
 
 .container_home_block {
-  width: 1300px;
+  width: 1200px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-}
-
-.bitcoin_logo_image {
-  width: 70px;
-  height: 70px;
-  position: relative;
-  padding: 0 20px 0 120px;
+  justify-content: center;
 }
 
 .home_block_name {
   font-size: 35px;
   color: #ffffff;
   font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 1050px;
+  justify-content: flex-start;
 }
 
+.block_cube_icon {
+  color: #ffffff;
+}
 
+.block_name_item {
+  margin-left: 15px;
+}
+
+.block_item_hash {
+  width: 1050px;
+  color: #ffffff;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
 
 </style>

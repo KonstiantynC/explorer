@@ -6,6 +6,7 @@ const routes = [
     path: '/',
     name: 'home-index',
     component: () => import('../components/home/home-index.vue'),
+    redirect: '/home-block',
     children: [
       {
         path: "/home-block",

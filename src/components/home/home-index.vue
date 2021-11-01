@@ -2,7 +2,8 @@
   <div class="header">
     <div class="header_header">
       <div class="header_home_link">
-        <router-link class="home_link" :to="{ path: '/home-block' }">
+        <img class="logo" :src="image">
+        <router-link class="home_link" :to="{ path: '/' }">
           Sobakachain  
         </router-link>  
       </div>
@@ -13,7 +14,9 @@
           <option>{{ transaction }}</option>
         </select>
         <input class="input_hash" @keydown="search" v-model="hash" type="text" placeholder="Address, transaction or block">
-        <button class="button_search" @click="search" :disabled="!hash">Search</button>
+        <button class="button_search" @click="search" :disabled="!hash">
+          <fa icon="search"/>
+        </button>
       </div>  
     </div>  
   </div>
@@ -23,6 +26,8 @@
 <script>
 import { validate, getAddressInfo } from 'bitcoin-address-validation';
 import error from '../views/error.vue'
+import image from '../img/dog_logo.svg'
+import homeBlock from './home-block.vue'
 
 export default {
   name: 'home-header',
@@ -35,7 +40,11 @@ export default {
     block: 'Block',
     address: 'Address',
     transaction: 'Transaction',
+    image
   }),
+  components: {
+    homeBlock
+  },
    methods: {
     search() {
       const valid = validate(this.hash)
@@ -74,7 +83,6 @@ export default {
 <style>
 .header {
   width: 100%;
-  background-color: green;
   display: flex;
   justify-content: center;
 }
@@ -85,40 +93,59 @@ export default {
   align-items: center;
   justify-content: space-around;
   height: 50px;
-  width: 1300px;
+  width: 1200px;
+  padding-top: 5px;
 }
 
 .input_item {
-  border: solid 2px black;
   border-radius: 5px;
 }
 
 .input_hash {
-  height: 25px;
-  width: 250px;
+  height: 29px;
+  width: 350px;
+}
+
+.input_hash::after {
+  background-color: red;
 }
 
 .select_page {
-  height: 30px;
-  background-color: blue;
+  height: 35px;
+  background-color: #5799d4;
   font-weight: 500;
+  border-radius: 5px 0 0 5px;
 }
 
 .button_search {
-  height: 30px;
-  background-color: blue;
-  color: black;
+  height: 35px;
+  width: 45px;
+  background-color: #5799d4;
+  color: #ffffff;
+  border-radius: 0 5px 5px 0;
 }
 
 .home_link {
   font-size: 25px;
   font-weight: 600;
-  color: #ffffff;
-  text-decoration: none; 
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #2c016f; 
 }
 
 .header_home_link {
-  padding-right: 600px;
+  padding-right: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+  padding-right: 10px;
 }
 
 </style>

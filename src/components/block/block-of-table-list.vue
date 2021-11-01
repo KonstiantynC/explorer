@@ -1,14 +1,8 @@
 <template>
   <div class="content">
-    <h2>Block: {{ blockInfo.height }}</h2>
     <table>
       <tbody>
         <tr>
-          <td>
-            <span>Hash:</span>
-            <span>{{ blockInfo.hash }}</span>            
-          </td>
-          <hr/>
           <td>
             <span>No:</span>
             <span>{{ blockInfo.ver }}</span>
@@ -93,7 +87,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 1200px;
+  width: 1000px;
 }
 
 h2 {
@@ -110,8 +104,8 @@ tbody {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 1200px;
-  padding-left: 15px;
+  width: 1000px;
+
 }
 
 
@@ -123,7 +117,7 @@ td {
 }
 
 hr {
-  width: 1200px;
+  width: 1000px;
 }
 
 </style>

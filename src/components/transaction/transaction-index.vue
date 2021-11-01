@@ -1,5 +1,6 @@
 <template>
   <div class="ul_list">
+    <transaction-page-underheader />
     <transaction-list
       :transaction-list="info"
     />
@@ -14,12 +15,14 @@
 import axios from 'axios'
 import TransactionInfo from './transaction-info.vue'
 import TransactionList from './transaction-list.vue'
+import transactionPageUnderheader from './transaction-page-underheader.vue'
 
 export default {
   name: 'transaction',
   components: {
     TransactionInfo,
-    TransactionList    
+    TransactionList ,
+    transactionPageUnderheader   
   },
   data: () => ({
     info: [],
@@ -46,9 +49,9 @@ export default {
   mounted() {
     this.loadTransaction ()
   },
-  updated() {
+  /*updated() {
     this.loadTransaction ()
-  }
+  }*/
 }
 
   

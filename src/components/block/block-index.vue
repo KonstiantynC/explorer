@@ -1,5 +1,8 @@
 <template>
   <div class="page_block">
+    <block-page-underheader
+      :block-page-underheader="info"
+    />
     <div>
       <table-list
         :block-info="info" 
@@ -14,6 +17,7 @@
 <script>
 import TableList from './block-of-table-list.vue'
 import TransactionBlock from './block-of-transaction-block.vue'
+import blockPageUnderheader from './block-page-underheader.vue'
 import axios from 'axios'
 
 export default {
@@ -21,7 +25,8 @@ export default {
   name: 'block',
   components: {
     TableList,
-    TransactionBlock
+    TransactionBlock,
+    blockPageUnderheader
   },
   data: () => ({
     info: [],
@@ -48,9 +53,9 @@ export default {
   mounted () {
     this.loadBlock()
   },
-  updated () {
+  /*updated () {
     this.loadBlock()
-  }      
+  } */     
 }
 
 

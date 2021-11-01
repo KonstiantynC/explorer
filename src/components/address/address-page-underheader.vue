@@ -16,7 +16,7 @@ import axios from 'axios'
 import image from '../img/bitcoin_icon.svg'
 
 export default {
-  name: 'home-block',
+  name: 'address-page-underheader',
   data: () => ({
     info: [],
     image,
@@ -57,6 +57,7 @@ export default {
   align-items: center;
   justify-content: flex-start;
 }
+
 
 .bitcoin_logo_image {
   width: 70px;

@@ -7,7 +7,7 @@
           <div class="error_item_text">
             {{ $route.params.input }}
           </div>
-        <span>' is not a valid address, transaction or block</span>
+        <span>' is not a valid BTC address, transaction or block</span>
       </div> 
       <div class="error_text">
         hash is not found  
