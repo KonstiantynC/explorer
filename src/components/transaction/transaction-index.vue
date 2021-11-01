@@ -1,6 +1,8 @@
 <template>
   <div class="ul_list">
-    <transaction-page-underheader />
+    <transaction-page-underheader
+    :transaction-page-underheader="info"
+    />
     <transaction-list
       :transaction-list="info"
     />

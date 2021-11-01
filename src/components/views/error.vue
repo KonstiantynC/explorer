@@ -1,7 +1,7 @@
 <template>
   <div class="error_container">
     <div class="error_title">
-      <fa size='2x' icon="exclamation-circle" class="error_icon" />
+      <fa size="2x" icon="exclamation-circle" class="error_icon" />
       <div class="error_item">
         <span>Sorry, '</span> 
           <div class="error_item_text">

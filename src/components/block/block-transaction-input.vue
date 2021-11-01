@@ -9,8 +9,8 @@
       v-else
     >
       <router-link
-      class="block_input" 
-      :to="{ name: 'address', params: { addr: this.transactionInput.prev_out.addr }}"
+        class="block_input" 
+        :to="{ name: 'address', params: { addr: this.transactionInput.prev_out.addr }}"
       >
         {{ transactionInput.prev_out.addr }}
       </router-link>

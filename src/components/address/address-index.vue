@@ -48,9 +48,9 @@ export default {
   mounted() {
     this.loadAddress ()
   },
-  updated() {
+  /*updated() {
     this.loadAddress ()
-  }
+  }*/
 }
 
   

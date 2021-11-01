@@ -1,8 +1,8 @@
 <template>
   <div>
     <router-link 
-    :to="{ name: 'address', params: { addr: this.transactionOut.addr }}"
-    class="block_out"
+      :to="{ name: 'address', params: { addr: this.transactionOut.addr }}"
+      class="block_out"
     >
       {{ transactionOut.addr }}
     </router-link>

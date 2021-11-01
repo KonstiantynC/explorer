@@ -93,7 +93,7 @@ export default {
   align-items: center;
   justify-content: space-around;
   height: 50px;
-  width: 1200px;
+  width: 1300px;
   padding-top: 5px;
 }
 
@@ -115,6 +115,7 @@ export default {
   background-color: #5799d4;
   font-weight: 500;
   border-radius: 5px 0 0 5px;
+  border-color: #5799d4;
 }
 
 .button_search {
@@ -123,6 +124,7 @@ export default {
   background-color: #5799d4;
   color: #ffffff;
   border-radius: 0 5px 5px 0;
+  border-color: #5799d4;
 }
 
 .home_link {

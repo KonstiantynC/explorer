@@ -1,6 +1,10 @@
 <template>
   <div class="transactions_blok_list">
-    <div class="transactions_blok__title">Block Transactions:</div> 
+    <div class="transactions_blok__title">
+      <div>
+        Block Transactions:
+      </div>
+    </div> 
     <div
       class="ul_list__blockTransactions"
       v-for="(transaction, index) in transactionBlock.tx"
@@ -65,40 +69,34 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  width: 1200px;
+  align-items: center;
+  width: 1100px;
   padding-left: 15px;
+  margin-top: 25px;
 }
 
 .transactions_blok__title {
+  width: 1150px;
   font-size: 25px;
   font-weight: 600;
-}
-
-.transactions_field {
+  margin-bottom: 25px;
+  margin-right: 15px;
   display: flex;
-  flex-direction: row;
-  width: 800px;
-  padding-bottom: 10px;
+  justify-content: flex-start;
+
 }
 
-.transaction_link {
-  padding-left: 35px;
+.ul_list__blockTransactions {
+  background-color: #ededed;
+  border-radius: 5px;
+  border: 1px solid #636363;
+  margin-bottom: 25px;
+  padding: 25px 30px;
+  width: 1080px;
+  height: auto;
+  margin-right: 20px;
 }
 
 
-.fee__value {
-  padding-left: 35px; 
-}
-
-.transactions_date {
-  display: flex;
-  flex-direction: row;
-  padding-left: 25px;
-}
-
-.time__value {
-  padding-left: 15px; 
-}
 
 </style>
