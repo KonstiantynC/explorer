@@ -62,30 +62,12 @@ export default {
 
 
 <style>
-ul {
-  list-style-type: none;
-  width: 1200px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
 .ul_list {
-
-}
-
-.li__inputs {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  width: 1200px;
+  justify-content: center;align-items: center;
+  width: 100%;
 }
 
-.li__out {
-  display: flex;
-  flex-direction: column; 
-  align-items: flex-start;
-  width: 1200px;
-}
 
 </style>

@@ -73,7 +73,13 @@ export default {
 
 
 <style>
-r {
+.transaction_list {
+  padding-bottom: 25px;
+  padding-top: 25px;
+  width: 1200px;
+  margin: 0 0 10px 50px;
+}
+tr {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -83,24 +89,20 @@ tbody {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 1200px;
+  width: 1000px;
   padding-left: 15px;
 }
 
-.transaction_list {
-  padding-bottom: 25px;
-  padding-top: 25px;
-}
 
 td {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 800px;
+  width: 600px;
 }
 
 hr {
-  width: 1200px;
+  width: 1100px;
 }
 
 </style>

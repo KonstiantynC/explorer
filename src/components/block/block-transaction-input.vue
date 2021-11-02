@@ -1,5 +1,5 @@
-<template>
-  <div>
+ <template>
+  <div class="block_transaction_input">
     <div 
       v-if="transactionInput.prev_out === null"
     >
@@ -43,5 +43,16 @@ export default {
 .block_input {
   text-decoration: none;
 }
+
+.block_transaction_input {
+  background-color: #ffffff;
+  padding: 15px 20px;
+  margin: 0 0 10px 0;
+  border-radius: 25px;
+  border: 1px solid #e0e0e0;  
+}
+/*
+ 
+*/
 
 </style>

@@ -85,6 +85,9 @@ export default {
   width: 100%;
   display: flex;
   justify-content: center;
+  position: fixed;
+  background-color: #ffffff;
+  border-bottom: 1px solid #c9c9c9;
 }
 
 .header_header {
@@ -94,7 +97,6 @@ export default {
   justify-content: space-around;
   height: 50px;
   width: 1300px;
-  padding-top: 5px;
 }
 
 .input_item {

@@ -48,6 +48,7 @@ export default {
   height: 150px;
   display: flex;
   align-items: center;
+  margin-top: 50px;
 }
 
 .container_home_block {

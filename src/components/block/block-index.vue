@@ -81,7 +81,7 @@ params: {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 50px;
 }
 
 .content {

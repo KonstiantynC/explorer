@@ -37,7 +37,7 @@ export default {
     image,
   }),
   mounted () {
-    console.log(this.transactionPageUnderheader.hash)
+
   }
 }
 
@@ -54,15 +54,16 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 50px;
+  margin: 50px 0 0 0;
 }
 
 .container__transaction {
-  width: 1200px;
+  width: 1260px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-left: 30px;
 }
 
 .transaction__name {
@@ -72,7 +73,7 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 1050px;
+  width: 1140px;
   justify-content: flex-start;
 }
 

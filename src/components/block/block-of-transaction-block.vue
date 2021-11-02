@@ -13,25 +13,36 @@
       <transaction-info 
         :transaction-info="transaction"
       />
-      <div 
-        class="transactionInput"
-        v-for="(objInput, index) in transaction.inputs"
-        :key="`objInput-${index}`"
-      > 
-        <transaction-input
-          :transaction-input="objInput"
-        />
+      <div class="transact_block_title">
+        <div class="transact_block_item">
+          <div class="transact_block_text">
+            Input Consumed
+          </div>
+          <div 
+            class="transactionInput"
+            v-for="(objInput, index) in transaction.inputs"
+            :key="`objInput-${index}`"
+          > 
+            <transaction-input
+              :transaction-input="objInput"
+            />
+          </div>
+        </div>
+        <div class="transact_block_item">
+          <div class="transact_block_text">
+            Outputs Created
+          </div>   
+          <div
+            class="transactionOut"
+            v-for="(objOut, index) in transaction.out"
+            :key="`objOut-${index}`"
+          > 
+            <transaction-out
+              :transaction-out="objOut"
+            />
+          </div>
+        </div>
       </div>
-      <div
-        class="transactionOut"
-        v-for="(objOut, index) in transaction.out"
-        :key="`objOut-${index}`"
-      > 
-        <transaction-out
-          :transaction-out="objOut"
-        />
-      </div>
-      <br/>
     </div>  
   </div>
 </template>
@@ -60,6 +71,7 @@ export default {
       required: true
     }
   },
+  
 }
 </script>
 
@@ -87,9 +99,9 @@ export default {
 }
 
 .ul_list__blockTransactions {
-  background-color: #ededed;
+  background-color: #f7f7f7;
   border-radius: 5px;
-  border: 1px solid #636363;
+  border: 1px solid #e0e0e0;
   margin-bottom: 25px;
   padding: 25px 30px;
   width: 1080px;
@@ -97,6 +109,26 @@ export default {
   margin-right: 20px;
 }
 
+.transact_block_title {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0 30px;
+}
 
+.transact_block_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.transact_block_text {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 8px;
+}
 
 </style>

@@ -1,31 +1,23 @@
 <template>
   <div>
-    <div class="transactions_field">
-      <div class="fee__value">
-        {{ transactionInfo.fee }}
-      </div>
-      <div class="fee_text">
-        <strong>BTC</strong> from
-        </div>
-    </div>
-    <div>
-      <div class="transactions_field">
-        <div>
-          <fa icon="exchange-alt" class="block_transaction_icon" />
-        </div>
+    <div class="block_transact_hash">
+      <div>
+        <fa icon="exchange-alt" class="block_transaction_icon" />
         <router-link 
           class="transaction_link" 
           :to="{ name: 'transaction', params: { tx: this.transactionInfo.hash }}"
-        >
+      >
           {{ transactionInfo.hash }}
         </router-link>
-        <div class="transactions_date">
-          <div>Date:</div>
-          <div class="time__value">
-            {{ transactionDate(transactionInfo.time) }}
-        </div>
-        </div>
       </div>
+      <div class="time__value">
+        {{ transactionDate(transactionInfo.time) }}
+      </div>  
+    </div>
+    <div class="block_fee">
+      Fee
+      {{ transactionInfo.fee }}
+      BTC  
     </div>
   </div>
 </template>
@@ -52,46 +44,45 @@ export default {
       return moment(this.transactionInfo.time * 1000).format('MMMM Do YYYY')
     },
     convertSatoshiFee() {
-      toBitcoin(this.tableListMain.fee)
+      toBitcoin(this.transactionInfo.fee)
     }
-  }
+  },
 }
 </script>
 
 
 <style>
+.block_transact_hash {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 30px 10px;
+  align-items: center;
+}
+
+
 .transaction_link {
   text-decoration: none;
   margin-left: 5px;
-}
-
-.transactions_field {
-  display: flex;
-  flex-direction: row;
-  width: 800px;
-  padding-bottom: 10px;
-}
-
-.fee__value {
-  padding-left: 35px; 
-}
-
-.fee_text {
-  margin-left: 6px;
 }
 
 .block_transaction_icon {
   color: #000000;
 }
 
-.transactions_date {
-  display: flex;
-  flex-direction: row;
-  padding-left: 25px;
+.time__value {
+  background-color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 25px;
+  border: 1px solid #e0e0e0; 
 }
 
-.time__value {
-  padding-left: 15px; 
+.block_fee {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin: -10px 0 30px 30px;  
 }
 
 </style>
