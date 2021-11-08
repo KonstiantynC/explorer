@@ -54,7 +54,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 50px 0 0 0;
+  margin: 60px 0 50px 0;
 }
 
 .container__transaction {
@@ -83,7 +83,7 @@ export default {
 }
 
 .transaction_item_hash {
-  width: 1050px;
+  width: 1140px;
   color: #ffffff;
   display: flex;
   justify-content: flex-start;

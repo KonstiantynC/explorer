@@ -1,12 +1,19 @@
 <template>
-  <div class="address_block_page">
-    <div class="container_address_block"> 
-      <div>
-        <img class="bitcoin_logo_image" :src="image">
-      </div>
-      <div class="address_block_name">
-        Bitcoin Explorer
+  <div class="address__page">
+    <div class="container__address"> 
+      <div class="address__name">
+        <div>
+          <fa icon="qrcode" class="address_arrows_icon" />
+        </div>
+        <div class="address_name_item">
+          Bitcoin Address {{ addressPageUnderheader.height }}
+        </div>
       </div>  
+      <div class="address_item_hash">
+        <div>
+          {{ addressPageUnderheader.address }}
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -17,6 +24,13 @@ import image from '../img/bitcoin_icon.svg'
 
 export default {
   name: 'address-page-underheader',
+  props: {
+    addressPageUnderheader: {
+      type: Object,
+      default: () => ({}),
+      required: true
+    }
+  },
   data: () => ({
     info: [],
     image,
@@ -27,37 +41,49 @@ export default {
 
 
 <style>
-
-.address_block_page {
+.address__page {
   background: rgb(17,0,42);
   background: linear-gradient(90deg, rgba(17,0,42,1) 3%, rgba(51,0,185,1) 82%, rgba(82,0,150,1) 100%);
   width: 100%;
   height: 150px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin: 60px 0 50px 0;
 }
 
-.container_address_block {
-  width: 1300px;
+.container__address {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  margin-left: 30px;
 }
 
-
-.bitcoin_logo_image {
-  width: 70px;
-  height: 70px;
-  position: relative;
-  padding: 0 20px 0 120px;
-}
-
-.address_block_name {
+.address__name {
   font-size: 35px;
   color: #ffffff;
   font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 1140px;
+  justify-content: flex-start;
 }
+
+.address_arrows_icon {
+  color: #ffffff;
+  margin-right: 15px;
+}
+
+.address_item_hash {
+  width: 1140px;
+  color: #ffffff;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
 
 
 

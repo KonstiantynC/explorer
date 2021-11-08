@@ -95,7 +95,7 @@ export default {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  height: 50px;
+  height: 60px;
   width: 1300px;
 }
 

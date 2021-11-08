@@ -1,29 +1,27 @@
 <template>
   <div>
-   <div class="block__info">
-      <ul class="block_main_info">
+   <div class="address__info">
+      <ul class="address_main_info">
         <li>
-          <span class="block_item_title">RECEIVED</span>
+          <span class="address_item_title">RECEIVED</span>
           <br>
-          <fa icon="clock" class="block_clock_icon" />
-          <time class="block_item_text">
-            {{ blockDate(tableListMain.time) }}
+          <time class="address_item_text">
+            {{ addressListMain.total_received }}
           </time>
-
         </li>
         <li>
           <div>
-            <span class="block_item_title">TOTAL TRANSACTED</span>
-            <div class="block_item_text">
-              {{ tableListMain.nonce }}
-          </div>
+            <span class="address_item_title">SENT</span>
+            <div class="address_item_text">
+              {{ addressListMain.total_sent }}
+            </div>
           </div>
         </li>
         <li>
           <div>
-            <span class="block_item_title">TOTAL FEES</span>
-            <div class="block_item_text">
-              {{ tableListMain.fee }}
+            <span class="address_item_title">BALANCE</span>
+            <div class="address_item_text">
+              {{ addressListMain.final_balance }}
             </div>
           </div>
         </li>
@@ -37,9 +35,9 @@ import moment from 'moment'
 import satoshiBitcoin from 'satoshi-bitcoin'
 
 export default {
-  name: 'table-list-main',
+  name: 'address-list-main',
   props: {
-    tableListMain: {
+    addressListMain: {
       type: Object,
       default: () => ({
       }),
@@ -50,8 +48,8 @@ export default {
 
   }),
   methods: {
-    blockDate () {
-      return moment(this.tableListMain.time * 1000).fromNow()
+    addressDate () {
+      return moment(this.addressListMain.time * 1000).fromNow()
     }
   }
 }
@@ -59,14 +57,14 @@ export default {
 
 
 <style>
-.block__info {
+.address__info {
   background-color: #e6e6e6;
   border: 1px solid #919191;
   border-radius: 8px;
   margin-bottom: 25px;
 }
 
-.block_main_info {
+.address_main_info {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -76,21 +74,20 @@ export default {
   padding-right: 40px;
 }
 
-ul.block_main_info li {
-  display: inline-block; 
+ul.address_main_info li {
+  display: inline-address; 
   margin-right: 5px;  
   padding: 3px; 
 }
 
-.block_item_title {
+.address_item_title {
   font-size: 14px;
   color: grey;
 }
 
-.block_item_text {
+.address_item_text {
   font-size: 25px;
   font-weight: 600;
-  margin-left: 5px;
 }
 
 </style>

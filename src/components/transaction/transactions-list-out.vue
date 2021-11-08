@@ -1,22 +1,12 @@
 <template>
-  <div>
+  <div class="transaction_out">
     <div>
-      Address:
       <router-link
         class="transact_link" 
         :to="{ name: 'address', params: { addr: this.transactionOut.addr  }}"
       >
         {{ transactionOut.addr }}
       </router-link>
-    </div>
-    <div>
-      Value: {{ transactionOut.value }}
-    </div>
-    <div>
-      Index: {{ transactionOut.n }}
-    </div>
-    <div>
-      Pkscript: {{ transactionOut.script }}
     </div>
   </div>
 </template>
@@ -34,12 +24,24 @@ export default {
   },
   data: () => ({
 
-  })
+  }),
+  
 }
 </script>
 
 
 <style>
+.transaction_out {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #ffffff;
+  padding: 15px 20px;
+  margin: 0 0 10px 0;
+  border-radius: 25px;
+  border: 1px solid #e0e0e0; 
+}
+
 .transact_link {
   text-decoration: none;
 }

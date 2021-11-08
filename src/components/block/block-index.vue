@@ -18,24 +18,24 @@
 </template>
 
 <script>
-import TransactionBlock from './block-of-transaction-block.vue'
+import transactionBlock from './block-of-transaction-block.vue'
 import tableListMain from './block-table-list-main.vue'
 import tableListOther from './block-table-list-other.vue'
 import blockPageUnderheader from './block-page-underheader.vue'
 import axios from 'axios'
 
 export default {
-
   name: 'block',
   components: {
-    TransactionBlock,
+    transactionBlock,
     blockPageUnderheader,
     tableListMain,
-    tableListOther
+    tableListOther,
   },
   data: () => ({
     info: [],
-    errored: true
+    errored: true,
+    //isLoaded: false
   }),
   methods: {
     loadBlock () {

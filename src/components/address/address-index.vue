@@ -1,8 +1,16 @@
 <template>
   <div class="ul_list">
-    <address-page-underheader />
-    <address-list 
-      :address-list="info"
+    <address-page-underheader
+      :address-page-underheader="info"
+    />
+    <address-list-main 
+      :address-list-main="info"
+    />
+    <address-list-other 
+      :address-list-other="info"
+    />
+    <address-table-list
+      :address-table-list="info"
     />
   </div>
 </template>
@@ -10,13 +18,17 @@
 
 <script>
 import axios from 'axios'
-import AddressList from './address-of-table-list.vue'
-import addressPageUnderheader from './address-page-underheader'
+import addressTableList from './address-table-list.vue'
+import addressPageUnderheader from './address-page-underheader.vue'
+import addressListMain from './address-list-main.vue'
+import addressListOther from './address-list-other.vue'
 
 export default {
   components: {
-    AddressList,
-    addressPageUnderheader
+    addressTableList,
+    addressPageUnderheader,
+    addressListMain,
+    addressListOther
   },
   name: 'address',
   data: () => ({
@@ -59,12 +71,11 @@ export default {
 
 
 <style>
-ul {
-  list-style-type: none;
-}
-
-.address__transaction {
-  width: 800px;
+.ul_list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;align-items: center;
+  width: 100%;
 }
 
 </style>

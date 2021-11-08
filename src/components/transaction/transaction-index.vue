@@ -1,10 +1,13 @@
 <template>
   <div class="ul_list">
     <transaction-page-underheader
-    :transaction-page-underheader="info"
+      :transaction-page-underheader="info"
     />
-    <transaction-list
-      :transaction-list="info"
+    <transaction-list-main 
+      :transaction-list-main="info"
+    />
+    <transaction-list-other 
+      :transaction-list-other="info"
     />
     <transaction-info 
       :transaction-info="info"
@@ -15,20 +18,22 @@
 
 <script>
 import axios from 'axios'
-import TransactionInfo from './transaction-info.vue'
-import TransactionList from './transaction-list.vue'
+import transactionInfo from './transaction-info.vue'
+import transactionListMain from './transaction-list-main.vue'
+import transactionListOther from './transaction-list-other.vue'
 import transactionPageUnderheader from './transaction-page-underheader.vue'
 
 export default {
   name: 'transaction',
   components: {
-    TransactionInfo,
-    TransactionList ,
+    transactionInfo,
+    transactionListMain,
+    transactionListOther,
     transactionPageUnderheader   
   },
   data: () => ({
     info: [],
-    errored: true 
+    errored: true, 
   }),
   methods: {
     loadTransaction () {
