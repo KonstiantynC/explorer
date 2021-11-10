@@ -3,7 +3,7 @@
     <div class="container__address"> 
       <div class="address__name">
         <div>
-          <fa icon="qrcode" class="address_arrows_icon" />
+          <fa icon="qrcode" class="address_qrcode_icon" />
         </div>
         <div class="address_name_item">
           Bitcoin Address {{ addressPageUnderheader.height }}
@@ -71,7 +71,7 @@ export default {
   justify-content: flex-start;
 }
 
-.address_arrows_icon {
+.address_qrcode_icon {
   color: #ffffff;
   margin-right: 15px;
 }

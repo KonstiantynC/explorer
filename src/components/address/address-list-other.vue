@@ -104,7 +104,7 @@ hr {
 .button_details {
   padding: 8px 15px;
   font-size: 16px;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
   background-color: #5799d4;
   color: #ffffff;
   border-radius: 5px;

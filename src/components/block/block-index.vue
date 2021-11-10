@@ -1,19 +1,30 @@
 <template>
   <div class="page_block">
-    <block-page-underheader
+    <div 
+      v-if="!isLoaded"
+      class="block_loader" 
+    >
+      <loader />
+    </div>
+    <div 
+      v-else 
+      class="page_block_title_block"
+    >
+      <block-page-underheader
       :block-page-underheader="info"
-    />
-    <div class="content">
-      <table-list-main 
-        :table-list-main="info"
       />
-      <table-list-other
-        :table-list-other="info"
+      <div class="content">
+        <table-list-main 
+          :table-list-main="info"
+        />
+        <table-list-other
+          :table-list-other="info"
+        />
+      </div>
+      <transaction-block
+        :transaction-block="info"  
       />
     </div>
-    <transaction-block
-      :transaction-block="info"  
-    />
   </div>
 </template>
 
@@ -22,6 +33,7 @@ import transactionBlock from './block-of-transaction-block.vue'
 import tableListMain from './block-table-list-main.vue'
 import tableListOther from './block-table-list-other.vue'
 import blockPageUnderheader from './block-page-underheader.vue'
+import loader from '../views/loader.vue'
 import axios from 'axios'
 
 export default {
@@ -31,22 +43,24 @@ export default {
     blockPageUnderheader,
     tableListMain,
     tableListOther,
+    loader
   },
   data: () => ({
     info: [],
     errored: true,
-    //isLoaded: false
+    isLoaded: false
   }),
   methods: {
-    loadBlock () {
+    loadBlock() {
       axios
       .get('https://blockchain.info/rawblock/' + this.$route.params.hash)
       .then(response => {
         this.info = response.data
+        this.isLoaded = true
       })
       .catch(error => {
         this.$router.push({
-          name: 'error',
+          name: 'error-index',
           params: { 
             input: this.$route.params.hash 
           }
@@ -57,6 +71,7 @@ export default {
   },
   mounted () {
     this.loadBlock()
+
   },
   /*updated () {
     this.loadBlock()
@@ -76,12 +91,11 @@ params: {
 
 
 <style>
-.page_block {
+.page_block_title_block {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-top: 50px;
 }
 
 .content {
@@ -89,6 +103,13 @@ params: {
   flex-direction: column;
   align-items: center;
   width: 1100px;
+}
+
+.page_block {
+  width: 100%;
+}
+.block_loader {
+  margin-top: 60px;
 }
 
 </style>

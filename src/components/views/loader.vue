@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="loader_page">
     <div class="lds-spinner">
       <div></div>
       <div></div>
@@ -28,6 +28,13 @@ export default {
 
 
 <style lang="scss" scoped>
+.loader_page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .lds-spinner {
   color: official;
   display: inline-block;

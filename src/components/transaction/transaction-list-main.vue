@@ -71,6 +71,9 @@ export default {
   border: 1px solid #919191;
   border-radius: 8px;
   margin-bottom: 25px;
+  width: 1100px;
+  height: 80px;
+
 }
 
 .transaction_main_info {
@@ -78,8 +81,6 @@ export default {
   align-items: center;
   justify-content: space-around;
   list-style-type: none;
-  width: 1060px;
-  height: 80px;
   padding-right: 40px;
 }
 

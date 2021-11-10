@@ -51,7 +51,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 0 50px 0;
+  margin: 60px 0 50px 0;
 }
 
 .container__block {

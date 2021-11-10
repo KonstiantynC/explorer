@@ -2,14 +2,14 @@
   <div>
    <div class="address__info">
       <ul class="address_main_info">
-        <li>
+        <li class="address_main_li">
           <span class="address_item_title">RECEIVED</span>
           <br>
           <time class="address_item_text">
             {{ addressListMain.total_received }}
           </time>
         </li>
-        <li>
+        <li class="address_main_li">
           <div>
             <span class="address_item_title">SENT</span>
             <div class="address_item_text">
@@ -17,7 +17,7 @@
             </div>
           </div>
         </li>
-        <li>
+        <li class="address_main_li">
           <div>
             <span class="address_item_title">BALANCE</span>
             <div class="address_item_text">
@@ -51,7 +51,7 @@ export default {
     addressDate () {
       return moment(this.addressListMain.time * 1000).fromNow()
     }
-  }
+  },
 }
 </script>
 
@@ -74,8 +74,7 @@ export default {
   padding-right: 40px;
 }
 
-ul.address_main_info li {
-  display: inline-address; 
+ul.address_main_info li { 
   margin-right: 5px;  
   padding: 3px; 
 }
@@ -90,4 +89,7 @@ ul.address_main_info li {
   font-weight: 600;
 }
 
+/*.address_main_li {
+  border-right: 1px solid #000000;
+}*/
 </style>

@@ -8,12 +8,12 @@
         </router-link>  
       </div>
       <div class="input_item">
-        <select class="select_page" @keydown="search" v-model="selected">
+        <select class="select_page" v-model="selected">
           <option>{{ block }}</option>
           <option>{{ address }}</option>
           <option>{{ transaction }}</option>
         </select>
-        <input class="input_hash" @keydown="search" v-model="hash" type="text" placeholder="Address, transaction or block">
+        <input class="input_hash" @keydown.enter="search" v-model="hash" type="text" placeholder="Address, transaction or block">
         <button class="button_search" @click="search" :disabled="!hash">
           <fa icon="search"/>
         </button>
@@ -25,18 +25,18 @@
 
 <script>
 import { validate, getAddressInfo } from 'bitcoin-address-validation';
-import error from '../views/error.vue'
+import errorIndex from '../views/error-index.vue'
 import image from '../img/dog_logo.svg'
 import homeBlock from './home-block.vue'
 
 export default {
   name: 'home-header',
   components: {
-    error
+    errorIndex
   },
   data: () => ({
     hash: '',
-    selected: '',
+    selected: 'Block',
     block: 'Block',
     address: 'Address',
     transaction: 'Transaction',
@@ -45,7 +45,7 @@ export default {
   components: {
     homeBlock
   },
-   methods: {
+  methods: {
     search() {
       const valid = validate(this.hash)
       if (this.selected == 'Address' || valid) {
@@ -106,6 +106,9 @@ export default {
 .input_hash {
   height: 29px;
   width: 350px;
+  border-left-style: none;
+  border-right-style: none;
+  padding-left: 10px;
 }
 
 .input_hash::after {
