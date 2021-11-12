@@ -61,7 +61,6 @@ export default {
   background-color: #e6e6e6;
   border: 1px solid #919191;
   border-radius: 8px;
-  margin-bottom: 25px;
 }
 
 .address_main_info {
@@ -69,13 +68,12 @@ export default {
   align-items: center;
   justify-content: space-around;
   list-style-type: none;
-  width: 1060px;
+  width: 1150px;
   height: 80px;
   padding-right: 40px;
 }
 
-ul.address_main_info li { 
-  margin-right: 5px;  
+ul.address_main_info li {   
   padding: 3px; 
 }
 
@@ -88,8 +86,4 @@ ul.address_main_info li {
   font-size: 25px;
   font-weight: 600;
 }
-
-/*.address_main_li {
-  border-right: 1px solid #000000;
-}*/
 </style>

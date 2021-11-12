@@ -28,6 +28,7 @@
             />
           </div>
         </div>
+        <img class="image_arrow" :src="imageArrow">
         <div class="transact_block_item">
           <div class="transact_block_text">
             Outputs Created
@@ -52,7 +53,7 @@ import axios from 'axios'
 import TransactionInput from './block-transaction-input.vue'
 import TransactionOut from './block-transaction-out.vue'
 import TransactionInfo from './block-of-transaction-info.vue'
-
+import imageArrow from '../img/arrow.svg'
 
 export default {
   name: 'transaction-block',
@@ -62,7 +63,7 @@ export default {
     TransactionInfo
   },
   data: () => ({
-    
+    imageArrow
   }),
   props: {
     transactionBlock: {
@@ -82,19 +83,16 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 1100px;
-  padding-left: 15px;
-  margin-top: 25px;
+  width: 1150px;
 }
 
 .transactions_blok__title {
+  display: flex;
+  justify-content: flex-start;
   width: 1150px;
   font-size: 25px;
   font-weight: 600;
   margin-bottom: 25px;
-  margin-right: 15px;
-  display: flex;
-  justify-content: flex-start;
 
 }
 
@@ -103,10 +101,8 @@ export default {
   border-radius: 5px;
   border: 1px solid #e0e0e0;
   margin-bottom: 25px;
-  padding: 25px 30px;
-  width: 1080px;
+  width: 1150px;
   height: auto;
-  margin-right: 20px;
 }
 
 .transact_block_title {
@@ -128,7 +124,11 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  margin-bottom: 8px;
+}
+
+.image_arrow {
+  width: 150px;
+  height: 150px;
 }
 
 </style>

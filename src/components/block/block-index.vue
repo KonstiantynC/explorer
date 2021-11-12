@@ -102,7 +102,7 @@ params: {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 1100px;
+  width: 1150px;
 }
 
 .page_block {

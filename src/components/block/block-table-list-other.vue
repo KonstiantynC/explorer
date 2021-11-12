@@ -79,7 +79,7 @@ tbody {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 1100px;
+  width: 1150px;
 
 }
 
@@ -92,17 +92,16 @@ td {
 }
 
 hr {
-  width: 1100px;
+  width: 1150px;
 }
 
 .table_list_other {
-  margin-top: 25px;
+  margin: 40px 0;
 }
 
 .button_details {
   padding: 8px 15px;
   font-size: 16px;
-  margin-bottom: 10px;
   background-color: #5799d4;
   color: #ffffff;
   border-radius: 5px;

@@ -23,11 +23,7 @@ export default {
   }),
   mounted() {
     axios
-      .get('https://blockchain.info/blocks', {
-        params: {
-          cors: true  
-        }
-      })
+      .get('https://blockchain.info/blocks/')
       .then(response => {
         this.info = response.data
       })
@@ -52,7 +48,7 @@ export default {
 }
 
 .container_home_block {
-  width: 1300px;
+  width: 1150px;
   display: flex;
   flex-direction: row;
   align-items: center;

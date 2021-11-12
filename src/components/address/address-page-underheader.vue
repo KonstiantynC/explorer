@@ -67,7 +67,7 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 1140px;
+  width: 1150px;
   justify-content: flex-start;
 }
 
@@ -77,7 +77,7 @@ export default {
 }
 
 .address_item_hash {
-  width: 1140px;
+  width: 1150px;
   color: #ffffff;
   display: flex;
   justify-content: flex-start;

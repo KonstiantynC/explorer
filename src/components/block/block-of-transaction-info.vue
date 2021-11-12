@@ -56,14 +56,12 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 0 30px 10px;
   align-items: center;
 }
 
 
 .transaction_link {
   text-decoration: none;
-  margin-left: 5px;
 }
 
 .block_transaction_icon {
@@ -81,8 +79,7 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
-  margin: -10px 0 30px 30px;  
+  justify-content: flex-start; 
 }
 
 </style>

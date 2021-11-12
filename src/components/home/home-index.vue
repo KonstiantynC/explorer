@@ -94,9 +94,9 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   height: 60px;
-  width: 1300px;
+  width: 1150px;
 }
 
 .input_item {
@@ -106,13 +106,9 @@ export default {
 .input_hash {
   height: 29px;
   width: 350px;
+  border-color: #5799d4;
   border-left-style: none;
   border-right-style: none;
-  padding-left: 10px;
-}
-
-.input_hash::after {
-  background-color: red;
 }
 
 .select_page {
@@ -142,7 +138,6 @@ export default {
 }
 
 .header_home_link {
-  padding-right: 200px;
   display: flex;
   flex-direction: row;
   align-items: center;

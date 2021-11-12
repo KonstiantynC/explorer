@@ -15,6 +15,7 @@
           />
         </div>
       </div>
+      <img class="image_arrow" :src="imageArrow">
       <div class="transaction_out_title">
         <div class="transact_block_text">
            Outputs Created
@@ -36,6 +37,7 @@
 <script>
 import transactionInput from './transactions-list-input.vue'
 import transactionOut from './transactions-list-out.vue'
+import imageArrow from '../img/arrow.svg'
 
 export default {
   name: 'transaction-info',
@@ -52,7 +54,7 @@ export default {
     }
   },
   data: () => ({
-
+    imageArrow
   })
 }
 </script>
@@ -63,20 +65,21 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 30px 10px;
   background-color: #f7f7f7;
   border-radius: 5px;
   border: 1px solid #e0e0e0;
-  padding: 25px 30px;
-  width: 1080px;
+  width: 1150px;
   height: auto;
 }
 
+.image_arrow {
+  width: 150px;
+  height: 150px;
+}
 
 .transaction_inputs {
   display: flex;
   flex-direction: column;
-  padding-bottom: 25px;
 }
 .transaction_out_title {
   display: flex;

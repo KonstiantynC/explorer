@@ -80,7 +80,7 @@ tbody {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 1100px;
+  width: 1150px;
 
 }
 
@@ -93,7 +93,7 @@ td {
 }
 
 hr {
-  width: 1100px;
+  width: 1150px;
   color: #dedede;
 }
 
