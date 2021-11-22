@@ -57,7 +57,6 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-left: 30px;
 }
 
 .address__name {
@@ -73,7 +72,7 @@ export default {
 
 .address_qrcode_icon {
   color: #ffffff;
-  margin-right: 15px;
+  margin-right: 10px;
 }
 
 .address_item_hash {

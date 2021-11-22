@@ -1,8 +1,7 @@
 <template>
   <div class="page_block">
     <div 
-      v-if="!isLoaded"
-      class="block_loader" 
+      v-if="!isLoaded" 
     >
       <loader />
     </div>
@@ -57,6 +56,7 @@ export default {
       .then(response => {
         this.info = response.data
         this.isLoaded = true
+        console.log(this.info)
       })
       .catch(error => {
         this.$router.push({
@@ -108,9 +108,7 @@ params: {
 .page_block {
   width: 100%;
 }
-.block_loader {
-  margin-top: 60px;
-}
+
 
 </style>
 

@@ -1,8 +1,7 @@
 <template>
   <div class="page_address">
     <div 
-      v-if="!isLoaded"
-      class="block_loader" 
+      v-if="!isLoaded" 
     >
       <loader />
     </div>
@@ -89,15 +88,16 @@ export default {
 .page_address {
   display: flex;
   flex-direction: column;
-  justify-content: center;align-items: center;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-}
-
-.block_loader {
-  margin-top: 60px;
 }
 
 .page_block_title_address {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 </style>

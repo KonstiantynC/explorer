@@ -61,6 +61,7 @@ export default {
   background-color: #e6e6e6;
   border: 1px solid #919191;
   border-radius: 8px;
+  width: 1150px;
 }
 
 .address_main_info {
@@ -68,7 +69,6 @@ export default {
   align-items: center;
   justify-content: space-around;
   list-style-type: none;
-  width: 1150px;
   height: 80px;
   padding-right: 40px;
 }

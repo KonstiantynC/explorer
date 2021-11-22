@@ -57,6 +57,7 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 10px 20px 0;
 }
 
 
@@ -79,7 +80,8 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start; 
+  justify-content: flex-start;
+  padding: 0 20px; 
 }
 
 </style>

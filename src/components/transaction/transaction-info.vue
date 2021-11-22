@@ -64,26 +64,41 @@ export default {
 .transaction_block_info {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   background-color: #f7f7f7;
   border-radius: 5px;
   border: 1px solid #e0e0e0;
   width: 1150px;
   height: auto;
+  margin-bottom: 50px;
 }
 
 .image_arrow {
   width: 150px;
-  height: 150px;
+  height: 100px;
 }
 
 .transaction_inputs {
   display: flex;
   flex-direction: column;
 }
+
+.transaction_input_title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 15px;
+}
+
 .transaction_out_title {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding: 10px 15px;
+}
+
+.transact_block_text {
+  margin-bottom: 8px;
 }
 
 </style>

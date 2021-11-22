@@ -1,8 +1,7 @@
 <template>
   <div class="page_transaction">
     <div 
-      v-if="!isLoaded"
-      class="block_loader" 
+      v-if="!isLoaded" 
     >
       <loader />
     </div>
@@ -94,10 +93,6 @@ export default {
   flex-direction: column;
   align-items: center;
   width: 100%;
-}
-
-.block_loader {
-  margin-top: 60px;
 }
 
 </style>

@@ -110,7 +110,7 @@ export default {
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 0 30px;
+  padding: 10px 20px;
 }
 
 .transact_block_item {
@@ -124,11 +124,12 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  margin-bottom: 8px;
 }
 
 .image_arrow {
   width: 150px;
-  height: 150px;
+  height: 100px;
 }
 
 </style>

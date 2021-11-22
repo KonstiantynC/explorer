@@ -72,6 +72,7 @@ export default {
       } else {
         console.log(validate('invalid'))
       }
+      this.hash = ''
     }
   }
 }

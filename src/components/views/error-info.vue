@@ -30,6 +30,14 @@
           <input class="error_input_hash" @keydown.enter="search" v-model="hash" type="text" placeholder="Example: 1AJbsFZ64EpEfS5UAjAfcUG8pH8Jn3rn1F">
         </div> 
       </div>
+      <div class="error_link_message">
+        <p>
+          <span class="error_link_title">Enter an</span>
+          <a class="error_block" href="#">block</a>
+          <a class="error_address" href="#">address</a>
+          <a class="error_transaction" href="#" @click="showHash">transaction</a>
+        </p>
+      </div>
       <div>
         <button class="error_button_search" @click="search" :disabled="!hash">
           <fa class="icon_search" icon="search"/>
@@ -87,10 +95,11 @@ export default {
       } else {
         console.log(validate('invalid'))
       }
+      this.hash = ''
+    },
+    showHash () {
+      this.hash = 'b6f6991d03df0e2e04dafffcd6bc418aac66049e2cd74b80f14ac86db1e3f0da'
     }
-  },
-  mounted () {
-    console.log(this.$route.params.input)
   }
 }
 </script>
@@ -106,6 +115,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin: 60px 0 50px 0;
 }
 
@@ -197,8 +207,37 @@ export default {
   border-color: #5799d4;
 }
 
+.error_link_message {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 670px;
+}
+
+.error_link_title {
+  color: #ffffff;
+  margin: 0 4px;
+}
+
+.error_block {
+  text-decoration: none;
+  color: #7c00f7;
+}
+
+.error_address {
+  margin: 0 4px; 
+  text-decoration: none;
+  color: #7c00f7;
+}
+
+.error_transaction {
+  text-decoration: none;
+  color: #7c00f7;
+}
+
 .error_button_search {
-  margin-top: 30px;
+  margin-top: 20px;
   height: 40px;
   width: 105px;
   background-color: #5799d4;

@@ -16,7 +16,8 @@
           />
         </div>
       </div>
-      <div>
+      <img class="image_arrow_address" :src="imageArrow">
+      <div class="address_Out_item">
         <span>Outputs Created</span>
         <div
           v-for="(itemOut, index) in addressItem.inputs"
@@ -34,12 +35,13 @@
 <script>
 import addressTableListsInput from './address-table-lists-input.vue'
 import addressTableListsOut from './address-table-lists-out.vue'
+import imageArrow from '../img/arrow.svg'
 
 export default {
   name: 'address-table-list',
   components: {
     addressTableListsInput,
-    addressTableListsOut
+    addressTableListsOut,
   },
   props: {
     addressTableList: {
@@ -50,7 +52,7 @@ export default {
     }
   },
   data: () => ({
-
+    imageArrow
   }),
   
 }
@@ -69,12 +71,25 @@ export default {
   border: 1px solid #e0e0e0;
   width: 1150px;
   height: auto;
-
 }
 
 .address_input_item {
   display: flex;
   flex-direction: column;
+  padding: 15px 20px;
 }
+
+.address_Out_item {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 20px;
+}
+
+.image_arrow_address {
+  width: 150px;
+  height: 100px;
+  padding: 15px 0 0;
+}
+
 
 </style>
